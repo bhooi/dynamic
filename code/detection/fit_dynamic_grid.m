@@ -35,7 +35,7 @@ end
 num_periods = size(graph_dist, 1);
 period = num_ticks / num_periods;
 
-tick_dist = kron(graph_dist, ones(period)); % expand graph distance matrix into tick distance
+tick_dist = kron(graph_dist, ones(period)); % expand graph distance matrix into tick distance using kronecker multiplication
 tick_dist = tick_dist(2:end, 2:end);
 
 anom_scores = nan(size(Xsensors));
