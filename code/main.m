@@ -9,9 +9,9 @@ addpath wprctile/
 rng(0);
 
 method_names = {'Proposed', 'GridWatch', 'Isolation', 'VAR', 'LOF', 'Parzen'};
-method_switches = [1 1 1 1 1 1]; % convenience switches to turn methods on and off
+method_switches = [1 1 0 1 1 1]; % convenience switches to turn methods on and off
 method_names = method_names(method_switches == 1);
-num_methods = length(method_names);
+num_methods = length(method_names); 
 
 metric_names = {'AUC', 'FMeasure'};
 metric_displaynames = {'AUC', 'F Measure'};
