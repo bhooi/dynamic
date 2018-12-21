@@ -1,0 +1,105 @@
+\documentclass[runningheads]{llncs}
+
+\setcounter{tocdepth}{3}
+
+\usepackage{times} % for prettier, tighter, fonts
+
+\usepackage{pbox}
+\usepackage{array}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage{mdwlist}
+\usepackage[ruled,vlined,shortend, linesnumbered]{algorithm2e} % algorithm
+\usepackage[]{algorithmic} % algorithm
+\usepackage{booktabs}
+% \setlength\lightrulewidth{0.1ex}
+\usepackage{color}
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm,amssymb}
+\usepackage{amsmath}
+\usepackage[]{caption}
+\usepackage{multirow}
+\usepackage{mathrsfs}
+\usepackage{amsbsy}
+\usepackage[mathscr]{eucal} %% For \mathscr
+\usepackage[flushleft]{threeparttable}
+\usepackage[hidelinks]{hyperref}
+\usepackage{comment}
+\usepackage{paralist}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage[skip=3pt]{subcaption}
+\usepackage{bbding} % for the \CheckmarkBold symbol
+
+\input{dfn.tex}
+
+\urldef{\mailcmu}\path|{bhooi,deswaran,hyunahs,christos}@cs.cmu.edu, {amritanp,mjeremin,pileggi}@andrew.cmu.edu|   
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+% \setlength{\textfloatsep}{6pt}
+% \setlength{\intextsep}{6pt}
+% \setlength{\tabcolsep}{5pt}
+% \captionsetup{belowskip=3pt,aboveskip=3pt}
+% \captionsetup[subfigure]{skip=3pt}
+% \captionsetup[table]{skip=5pt}
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{\methodF: Sensor Placement and Anomaly Detection in the Electrical Grid}
+
+\author{Bryan Hooi\inst{1}\inst{2}
+\and Dhivya Eswaran\inst{1}
+\and Hyun Ah Song\inst{1}
+\and Amritanshu Pandey\inst{3}
+\and Marko Jereminov\inst{3}
+\and Larry Pileggi\inst{3}
+\and Christos Faloutsos\inst{1}}
+%
+\authorrunning{B. Hooi et al.}
+
+\institute{School of Computer Science, Carnegie Mellon University\\
+\and
+Department of Statistics, Carnegie Mellon University\\
+\and
+Deptartment of Electrical and Computer Engineering, Carnegie Mellon University\\
+\mailcmu
+}
+
+\maketitle
+
+\begin{abstract}
+\input{000abstract}
+\end{abstract}
+
+\section{Introduction}
+\label{sec:Introduction}
+\input{010introduction}
+
+\section{Background and Related Work}
+\label{sec:background}
+\input{020background}
+
+\input{030method}
+
+\section{Experiments}
+\label{sec:Results}
+\input{040experiment}
+
+\section{Conclusion}
+\label{sec:Conclusion}
+\input{060conclusion}
+
+\section{Acknowledgment}
+
+This material is based upon work supported by the National Science Foundation under Grant No. CNS-1314632, IIS-1408924, and by the Army Research Laboratory under Cooperative Agreement Number W911NF-09-2-0053, and in part by the Defense Advanced Research Projects Agency (DARPA) under award no. FA8750-17-1-0059 for the RADICS program. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation, or other funding parties. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes notwithstanding any copyright notation here on.
+
+\bibliographystyle{splncs03}
+\bibliography{BIB/gridanom}
+
+\end{document}
+
+

@@ -1,0 +1,55 @@
+Improving the efficiency and security of power delivery is a critically important goal, in the face of disturbances arising from severe weather, human error, equipment failure, or even intentional intrusion. Estimates~\cite{amin2011us} suggest that reducing outages in the U.S. grid could save $\$ 49$ billion per year, reduce emissions by $12$ to $18\%$, while improving efficiency could save an additional $\$ 20.4$ billion per year. A key part of achieving this goal is to use sensor monitoring data to quickly identify when parts of the grid fail, so as to quickly respond to the problem. 
+
+A major challenge is scalability - power systems data can be both high-volume and received in real time, since the data comes from sensors which are continuously monitoring the grid. This motivates us to develop fast methods that work in this online (or streaming) setting. When each new data point is received, the algorithm should update itself efficiently - for our algorithm, each update requires constant time, and bounded memory, regardless of the length of the stream.
+
+Hence, our goal is an online anomaly detection algorithm:
+
+\begin{iproblem}[Online Anomaly Detection]\ \vspace{.0cm}
+\bit
+    \item \textbf{Given:} A graph $\G = (\V, \E)$, and a subset $\S$ of nodes which contain sensors. For each sensor, we have a continuous stream of values of real and imaginary voltage $V(t)$ and current $I(t)$ measured by these sensors.
+    \item \textbf{Find:} At each time $t$, compute an anomalousness score $A(t)$, indicating our confidence level that an anomaly occurred (i.e. a transmission line failed). 
+\eit
+\end{iproblem}
+
+For cost reasons, it is generally infeasible to place sensors at every node. Hence, an important follow-up question is where to place sensors so as to maximize the probability of detecting an anomaly. 
+
+\begin{iproblem}[Sensor Placement]\ \vspace{.0cm}
+\bit
+    \item \textbf{Given:} A budget $k$ of the number of sensors we can afford, a graph $\G = (\V, \E)$, and a simulator that allows us to simulate sensor readings at each node.
+    \item \textbf{Find:} A set of nodes $\S \subseteq \V$, which are the locations we should place our sensors, such that $|\S|=k$. 
+\eit
+\end{iproblem}
+
+In contrast to most approaches, our anomaly detection algorithm, \methodD, uses a domain-dependent approach which exploits the fact that electrical sensors consist of a voltage reading at a node as well as the current along each adjacent edge. This allows us to detect anomalies more accurately, even when using an online approach. Next, we propose \method, a sensor placement algorithm. The main idea is to define an objective which estimates our probability of successfully detecting an anomaly, then show that this objective has the submodularity property, allowing us to optimize it with approximation guarantees using an efficient greedy algorithm. 
+
+Figure \ref{fig:sensors_plot_case2869pegase_10} shows the sensors selected by \method: red circles indicate positions chosen. Figure \ref{fig:anomalousness} shows the anomaly scores (black line) output by \methodD, which accurately match the ground truth. Figure \ref{fig:cj_eval} shows that \method outperforms baselines on the \datasmall data. 
+
+Our contributions are as follows:
+
+\ben
+\item {\bf Online anomaly detection:} we propose a novel, online anomaly detection algorithm, \methodD, that outperforms existing approaches.
+\item {\bf Sensor placement:} we construct an optimization objective for sensor placement, with the goal of maximizing the probability of detecting an anomaly. We show that this objective has the property of `submodularity,' which we exploit to propose our sensor placement algorithm.
+\item {\bf Effectiveness:} Our sensor placement algorithm, \method, is provably near-optimal. In addition, both our algorithms outperform existing approaches in accuracy by $59\%$ or more (F-measure) in experiments. 
+\item {\bf Scalability:} Our algorithms scale linearly, and \methodD is online, requiring bounded space and constant time per update. 
+\een
+\textbf{Reproducibility:} our code and data are publicly available at \codeurl.
+
+
+\begin{figure}[htb]
+\begin{subfigure}[t]{0.32\textwidth}
+    \centering
+       \includegraphics[width = \textwidth,trim={1.8cm 1.6cm 1.3cm .7cm},clip]{FIG/sensors_plot_case2869pegase_10.pdf} 
+    \caption{\textbf{Selects sensor locations} \label{fig:sensors_plot_case2869pegase_10} }
+\end{subfigure} 
+\begin{subfigure}[t]{0.39\textwidth}
+    \centering
+       \includegraphics[width = \textwidth,trim={0 0 .3cm 0},clip]{FIG/anomalousness.pdf} 
+    \caption{\textbf{Anomaly scores} \label{fig:anomalousness} }
+\end{subfigure} 
+\begin{subfigure}[t]{0.28\textwidth}
+    \centering
+       \includegraphics[width = \textwidth,trim={0 0 0 0},clip]{FIG/cj_eval.pdf} 
+    \caption{\textbf{Accuracy} \label{fig:cj_eval} }
+\end{subfigure} 
+\caption{ (a) \method provably selects near-optimal sensor locations. Red circles indicate positions chosen for sensors, in the \datasmall graph.  (b) \methodD computes anomaly scores (black line) on \datasmall. Red crosses indicate ground truth - notice 100\% true alarms (all black spikes above blue line are true alarms) and only 4 false dismissals (red crosses below blue line). (c) F-measure of \method compared to baselines on \datasmall.}
+\end{figure}

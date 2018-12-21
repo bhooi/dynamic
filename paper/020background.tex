@@ -1,0 +1,41 @@
+
+\paragraph{Time Series Anomaly Detection.} Numerous algorithms exist for anomaly detection in univariate time series~\cite{keogh2007finding}. For multivariate time series, LOF~\cite{breunig2000lof} uses a local density approach. Isolation Forests~\cite{liu2008isolation} partition the data using a set of trees for anomaly detection. Other approaches use neural networks~\cite{yi2017grouped}, distance-based~\cite{ramaswamy2000efficient}, and exemplars~\cite{jones2014anomaly}. However, none of these consider sensor selection. 
+
+\paragraph{Anomaly Detection in Temporal Graphs.} \cite{akoglu2010oddball} finds anomalous changes in graphs using an egonet (i.e. neighborhood) based approach, while \cite{chen2012community} uses a community-based approach. \cite{mongiovi2013netspot} finds connected regions with high anomalousness. \cite{araujo2014com2} detect large and/or transient communities using Minimum Description Length. \cite{akoglu2010event} finds change points in dynamic graphs, while other partition-based~\cite{aggarwal2011outlier} and sketch-based~\cite{ranshous2016scalable} exist for anomaly detection. However, these methods require fully observed edge weights (i.e. all sensors present), and also do not consider sensor selection. 
+
+\paragraph{Power Grid Monitoring.} A number of works consider the Optimal PMU Placement (OPP) problem~\cite{brueni2005pmu}, of optimally placing sensors in power grids, typically to make as many nodes as possible fully observable, or in some cases, minimizing mean-squared error. Greedy~\cite{li2011phasor}, convex relaxation~\cite{kekatos2012optimal}, integer program~\cite{dua2008optimal}, simulated annealing~\cite{baldwin1993power}, and swarm-based~\cite{chakrabarti2008pmu} approaches have been proposed. However, these methods do not perform anomaly detection. \cite{rakpenthai2007optimal,zhao2012pmu,magnago1999unified} consider OPP in the presence of branch outages, but not anomalies in general, and due to their use of integer programming, only use small graphs of size at most 60. 
+
+\paragraph{Epidemic and Outbreak Detection.} \cite{leskovec2007cost} proposed CELF, for outbreak detection in networks, such as water distribution networks and blog data, also using a submodular objective function. Their setting is a series of cascades spreading over the graph, while our input data is time-series data from sensors at various edges of the graph. For epidemics, \cite{pastor2002immunization,cohen2003efficient} consider targeted immunization, such as identifying high-degree~\cite{pastor2002immunization} or well-connected~\cite{cohen2003efficient} nodes. We show experimentally that our sensor selection algorithm outperforms both approaches.
+
+{
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.1}
+\begin{table}[h!]
+\small
+\centering
+\caption{Comparison of related approaches: only \methodF satisfies all the listed properties.}
+\label{tab:salesman}
+\begin{tabular}{@{}rcccc|c@{}}
+\toprule
+ & \rotatebox{90}{\textbf{Time Series}~\cite{keogh2007finding,breunig2000lof}, etc.} & \rotatebox{90}{\textbf{Graph-based}~\cite{akoglu2010oddball,mongiovi2013netspot,shah2015timecrunch}} & \rotatebox{90}{\textbf{OPP}~\cite{brueni2005pmu,li2011phasor,kekatos2012optimal}, etc.} & \rotatebox{90}{\textbf{Immunization}~\cite{pastor2002immunization,cohen2003efficient}\ \ }  & {\bf \rotatebox{90}{\methodF}} \\ \midrule
+\textbf{Anomaly Detection} & \Checkmark & \Checkmark & & & \CheckmarkBold \\ 
+\textbf{Online Algorithm} & \Checkmark &  & & & \CheckmarkBold \\
+\textbf{Using Graph Data} &  & \Checkmark & \Checkmark & \Checkmark & \CheckmarkBold \\ \midrule
+\textbf{Sensor Selection} & &  & \Checkmark & \Checkmark & \CheckmarkBold \\ 
+\textbf{With Approx. Guarantee} & &  & & & \CheckmarkBold \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+}
+
+Table \ref{tab:salesman} summarizes existing work related to our problem. \methodF differs from existing methods in that it performs anomaly detection using an online algorithm, and it selects sensor locations with a provable approximation guarantee. 
+
+\subsection{Background: Submodular Functions}
+A function $f$ defined on subsets of $\V$ is submodular if whenever $\T \subseteq S$ and $i \notin S$:
+\begin{align}
+f(\S \cup \{i\}) - f(\S) \le f(\T \cup \{i\}) - f(\T) 
+\end{align}
+Intuitively, this can be interpreted as \emph{diminishing returns}: the left side is the gain in $f$ from adding $i$ to $\S$, and the right side is the gain from adding $i$ to $\T$. Since $\T \subseteq S$, this says that as $\T$ `grows' to $\S$, the gains from adding $i$ can only diminish.
+
+\cite{nemhauser1978analysis} showed that nondecreasing submodular functions can be optimized by a greedy algorithm with a constant-factor approximation guarantee of $(1-1/e)$. These were extended by \cite{sviridenko2004note} to the non-constant sensor cost setting. 

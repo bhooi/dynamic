@@ -1,0 +1,92 @@
+We design experiments to answer the following questions:
+\begin{itemize}
+    \item \textbf{Q1. Anomaly Detection Accuracy:} on a fixed set of sensors, how accurate are the anomalies detected by \method compared to baselines?
+    \item \textbf{Q2. Sensor Selection:} how much does sensor selection using \method improve the anomaly detection performance compared to other selection approaches?
+    \item \textbf{Q3. Scalability:} how do our algorithms scale with the graph size?
+\end{itemize}
+
+Our code and data are publicly available at \codeurl. Experiments were done on a 2.4 GHz Intel Core i5 Macbook Pro, 16 GB RAM running OS X 10.11.2.
+
+\paragraph{\bf Data:} We use 2 graphs, \datasmall and \datalarge, which accurately represent different parts of the European high voltage network~\cite{zimmerman2011matpower}. Dataset details are in Table \ref{tab:data}. 
+\setlength{\tabcolsep}{6pt}
+\begin{table}[htbp]
+\centering
+    \begin{center}
+        \caption{Datasets used. \label{tab:data}}
+        \begin{tabular}{ @{}rcccc@{} }  
+        \toprule
+        \textbf{Dataset name} & \textbf{Nodes} & \textbf{Generators} & \textbf{Edges} & \textbf{Transformers} \\ \midrule
+            \datasmall~\cite{zimmerman2011matpower}& 2869 & 327 & 2896 & 170 \\    
+            \datalarge~\cite{zimmerman2011matpower} & 9241 & 1445 & 16049 & 1319 \\
+        \bottomrule
+        \end{tabular} 
+    \end{center}
+\end{table}
+\subsection{Q1. Anomaly Detection Accuracy}
+
+In this section, we compare \methodD against baseline anomaly detection approaches, given a fixed set of sensors. 
+
+\paragraph{\bf Experimental Settings:} For each graph, the sensor set for all algorithms is chosen as a uniformly random set of nodes of various sizes (the sizes are plotted in the x-axis of Figure \ref{fig:eval_anom}). Then, out of $480$ time ticks, we first sample $50$ random time ticks as the times when anomalies occur. In each such time tick, we deactivate a randomly chosen edge (i.e. no current can flow over that edge). 
+
+Using MatPower~\cite{zimmerman2011matpower}, we then generate voltage and current readings at each sensor. This requires an input time series of loads (i.e. real and reactive power at each node): we use load patterns estimated from real data \cite{song2017powercast} recorded from the Carnegie Mellon University (CMU) campus for $20$ days from July 29 to August 17, 2016, scaled to a standard deviation of $0.3\cdot \sigma$, with added Gaussian noise of $0.2\cdot \sigma$, where $\sigma$ is the standard deviation of the original time series~\cite{song2017powercast}. 
+
+This results in a time series of $480$ time ticks (hourly data from $20$ days), at each time recording the voltage at each sensor and the current at each edge adjacent to one of the sensors. Given this input, each algorithm then returns a ranking of the anomalies. We evaluate this using standard metrics, AUC (area under the ROC curve) and F-measure ($\frac{2\cdot \text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}$), the latter computed on the top $50$ anomalies output by each algorithm. 
+
+
+\paragraph{\bf Baselines:} Dynamic graph anomaly detection approaches \cite{akoglu2010oddball,chen2012community,mongiovi2013netspot,araujo2014com2,shah2015timecrunch} cannot be used as they require graphs with fully observed edge weights. Moreover, detecting failed power lines with all sensors present can be done by simply checking if any edge has current equal to $0$, which is trivial. Hence, instead, we compare \methodD to the following multidimensional time series based anomaly detection methods: Isolation Forests~\cite{liu2008isolation}, Vector Autoregression (VAR)~\cite{hamilton1994time}, Local Outlier Factor (LOF)~\cite{breunig2000lof}, and Parzen Window~\cite{parzen1962estimation}. Each uses the currents and voltages at the given sensors as features. For VAR the norms of the residuals are used as anomaly scores; the remaining methods return anomaly scores directly.
+
+For Isolation Forests, we use $100$ trees (following the scikit-learn defaults \cite{scikit-learn}). For VAR we select the order by maximizing AIC, following standard practice. For LOF we use $20$ neighbors (following scikit-learn defaults), and $20$ neighbors for Parzen Window.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{FIG/eval_anom.pdf}
+    \caption{\label{fig:eval_anom}\textbf{Accurate anomaly detection:} \methodD outperforms alternate anomaly detection methods. Left plots are for \datasmall; right plots are for \datalarge. }
+\end{figure}
+
+Figure \ref{fig:eval_anom} shows that \methodD outperforms the baselines, by $31\%$ to $42\%$ Area under the Curve (AUC) and $133\%$ to $383\%$ F-Measure. The gains in performance likely come from the use of the 3 domain-knowledge based detectors, which combine information from the currents surrounding each sensor in a way that makes it clearer when an anomaly occurs.
+
+Further testing shows that \methodD's 3 detectors all play a role: e.g. on \datasmall, for 50 sensors, \methodD has F-measure $0.67$, but only using single detectors 1, 2 or 3 (where detector 1 refers to the detector in Definition \ref{dfn:detector1}, and so on) gives F-measures of $0.51$, $0.6$ or $0.56$ respectively. 
+
+\subsection{Q2. Sensor Selection Quality}
+We now evaluate \method. We use the same settings as in the previous sub-section, except that the sensors are now chosen using either \method, or one of the following baselines. We then compute the anomaly detection performance of \methodD as before on each choice of sensors. For \method we use $c=15$. For our simulated data sizes, we assume $2000$ anomalies and $480$ normal scenarios.
+
+\paragraph{\bf Baselines:} randomly selected nodes ({\it Random}); highest degree nodes ({\it Degree}); nodes with highest total current in their adjacent edges ({\it MaxCurrent}); highest betweenness centrality~\cite{freeman1978centrality} nodes, i.e. nodes with the most shortest paths passing through them, thus being the most `central' ({\it Betweenness}); a power-grid based Optimal PMU Placement algorithm using depth-first search ({\it OPP} \cite{baldwin1993power}).
+
+Figure \ref{fig:eval_selection} shows that \method outperforms the baselines, by $18$ to $19\%$ Area under the Curve (AUC) and $59$ to $62\%$ F-Measure. 
+
+Figure \ref{fig:anomalousness} shows the \method anomaly scores on the \datasmall data over time, when using the maximum $200$ sensors, with red crosses where true anomalies exist. Spikes in anomaly score match very closely with the true anomalies.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{FIG/eval_selection.pdf}
+    \caption{\label{fig:eval_selection}\textbf{\method provides effective sensor selection:}  sensor selection using \method results in higher anomaly detection accuracy than other methods.}
+\end{figure}
+
+% \begin{figure}[htb]
+% \begin{subfigure}[t]{0.6\textwidth}
+%     \centering
+%        \includegraphics[width = \textwidth,trim={0 0 0 0},clip]{FIG/anomalousness.pdf} 
+%     \caption{\textbf{Accurate anomaly scores} \label{fig:anomalousness} }
+% \end{subfigure} 
+% \begin{subfigure}[t]{0.4\textwidth}
+%     \centering
+%        \includegraphics[width = \textwidth,trim={0 0 0 0},clip]{FIG/scalability_case118.pdf} 
+%     \caption{\textbf{\method scales linearly} \label{fig:scalability_case118} }
+% \end{subfigure} 
+% \caption{ (a) \method computes anomaly scores (black line) on \datasmall; red crosses indicate where anomalies exist. \method accurately separates anomalies from normal points. (b) Time taken by \method against number of edges in $\G$.}
+% \end{figure}
+\subsection{Q3. Scalability}
+Finally, we evaluate the scalability of \methodD and \method. To generate graphs of different sizes, we start with the IEEE 118-bus network~\cite{118bus}, which represents a portion of the US power grid in 1962, and duplicate it $2, 4, \cdots, 20$ times. To keep our power grid connected, after each duplication, we add edges from each node to its counterpart in the last duplication; the parameters of each such edge are randomly sampled from those of the actual edges. We then run \methodD and \method using the same settings as the previous sub-section. Figure \ref{fig:scalability_case118} shows that \methodD and \method scale linearly. The blue line is the best-fit regression line. 
+\begin{figure}[htb]
+\centering
+\begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth,trim={0 0 0.2cm .9cm},clip]{FIG/scalability_detect_case118.pdf}
+    \caption{\label{fig:scalability_case118} \methodD}
+\end{subfigure} 
+\hspace{.5cm}
+\begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth,trim={0 0 0.2cm .9cm},clip]{FIG/scalability_sensor_case118.pdf}
+    \caption{\label{fig:scalability_case118} \method}
+\end{subfigure} 
+\caption{ Our algorithms scale linearly: wall-clock time of (a) \methodD and (b) \method against number of edges in $\G$.}
+\end{figure}

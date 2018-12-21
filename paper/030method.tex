@@ -1,0 +1,228 @@
+
+
+\section{\methodD Anomaly Detection Algorithm}
+
+\paragraph{Preliminaries} Table \ref{tab:dfn} shows the symbols used in this paper. 
+\setlength{\tabcolsep}{6pt}
+\begin{table}[htbp]
+\small
+\centering
+	\caption{Symbols and definitions \label{tab:dfn}}
+	\begin{tabular}{ @{}rl@{} }  
+	\toprule
+	\textbf{Symbol} & \textbf{Interpretation} \\ \midrule
+		$\G=(\V,\E)$ & Input graph \\
+		$\S$ & Subset of nodes to place sensors on\\
+		$n$ & Number of nodes \\
+		$s$ & Number of scenarios \\
+		$\N_i$ & Set of edges adjacent to node $i$ \\
+		$V_i(t)$ & Voltage at node $i$ at time $t$\\
+		$I_e(t)$ & Current at edge $e$ at time $t$\\
+		$S_{ie}(t)$ & Power w.r.t. node $i$ and edge $e$ at time $t$\\
+		$\Delta S_{ie}(t)$ & Power change: $\Delta S_{ie}(t) =  S_{ie}(t) - S_{ie}(t-1)$\\
+		$X_{i}(t)$ & Sensor vector for scenario $i$ at time $t$ \\
+		$c$ & Anomalousness threshold parameter \\
+		$\tilde{\mu}_i(t)$ & Median of sensor $i$ at time $t$\\
+		$\tilde{\sigma}_i(t)$ & Inter-quartile range of sensor $i$ at time $t$\\
+		$a_i(t)$ & Sensor-level anomalousness for sensor $i$ at time $t$\\
+		$A(t)$ & Total anomalousness at time $t$\\
+	\bottomrule
+	\end{tabular} 
+\end{table}
+
+In this section, we are given a graph $\G=(\V,\E)$ and a fixed set of sensors $\S \subseteq \V$. Each sensor consists of a central node $i$ on which voltage $V_i(t) \in \mathbb{C}$ is measured, at each time $t$. Note that complex voltages and currents are used to take phase into account, following standard practice in circuit analysis (this paper will not presume familiarity with this). Additionally, for sensor $i$, letting $\N_i$ be the set of edges adjacent to $i$, we are given the current $I_e \in \mathbb{C}$ along each edge $e \in \N_i$. 
+
+For sensor $i$ and edge $e \in \N_i$, define the power w.r.t. $i$ along edge $e$ as $S_{ie}(t) = V_i(t) \cdot I_e(t)^*$, where $^*$ is the complex conjugate. We find that using power (rather than current) provides better anomaly detection in practice. However, when considering the edges around a single sensor $i$, variations in current result in similar variations in power, so they perform the same role. 
+
+
+\label{sec:anomaly}
+
+\subsection{Types of Anomalies}
+In short, we will design detectors for 3 common types of anomalies (see Figure \ref{fig:detectors}), then combine these detectors into a score for each sensor (Definition \ref{dfn:sensorlevel}), then finally combine these sensor-level scores into an overall score for each time tick (Definition \ref{dfn:overall}). 
+
+Our goal is to detect single edge deletions, i.e. a transmission line failure. Single edge deletions affect the voltage and current in the graph in a complex, nonlinear way, and can manifest themselves in multiple ways. 
+
+As an illustrative example, consider the simple power grid shown by the graphs in Figure \ref{fig:detectors}. The power grid consists of a single generator, a single load, and power lines of uniform resistance. When the edge marked in the black cross fails, current is diverted from some edges to others, causing some edges to have increased current flow (blue edges), and thus increased power, and others to have decreased current flow (red edges). Current flows are computed using a standard power grid simulator, Matpower~\cite{zimmerman2011matpower}. 
+\begin{figure}[ht]
+    \centering
+       \includegraphics[width = \textwidth,trim={.4cm 0 .1cm .3cm},clip]{FIG/detectors.pdf} 
+    \caption{\textbf{Domain-aware model for anomalies:} edge failures divert current from one region of the graph to another, forming 3 patterns. Edge color indicates change in current due to the edge failure: blue is an increase; red is a decrease. {\it Left:} current from the deleted edge diverts into an edge, resulting in a highly anomalous value along a single edge. {\it Center:} the deletion diverts current between areas (from the right side to the left side of the graph), forming a group anomaly at the leftmost sensor, due to its multiple positive edges. {\it Right:} the deletion diverts current between paths, making the central sensor have multiple positive and negative edges. \label{fig:detectors} }
+\end{figure} 
+
+In the leftmost plot, the edge deletion diverts a large amount of current into a single edge, resulting in a highly anomalous value $(+0.4)$ along a single edge. To detect single-edge anomalies, we consider the largest absolute change in power in the edges adjacent to this sensor. Formally, letting $\Delta S_{ie}(t) =  S_{ie}(t) - S_{ie}(t-1)$,
+\begin{definition}[Single-Edge Detector] \label{dfn:detector1}
+The single-edge detector at sensor $i$ is:
+\begin{align} \label{eq:detector_se}
+x_{SE,i}(t) = \max_{e \in \N_i} |\Delta S_{ie}(t)|
+\end{align}
+\end{definition}
+
+In the middle plot, the edge deletion cuts off a large amount of current that would have gone from the generator toward the right side of the graph, diverting it into the left side of the graph. This results in some nodes in the left region with all their neighboring edges having positive changes (blue), such as the leftmost node. Individually, these changes may be too small to appear anomalous, but in aggregate, they provide stronger evidence of an anomaly. Hence, the group anomaly detector computes the sum of power changes around sensor $i$, then takes the absolute value:
+
+\begin{definition}[Group Anomaly Detector]
+The group anomaly detector at sensor $i$ is:
+\begin{align} \label{eq:detector_ga}
+x_{GA,i}(t) = |\sum_{e \in \N_i}(\Delta S_{ie}(t))|
+\end{align}
+\end{definition}
+
+In the right plot, the edge deletion diverts current between nearby edges. In particular, current diversions around the central node cause it to have neighbors which greatly differ from each other: $2$ positive edges and $2$ negative edges. If this diversion is large enough, this provides stronger evidence of an anomaly than simply looking at each edge individually. Hence, the group diversion detector measures the `spread' around sensor $i$ by looking at the total absolute deviation of power changes about sensor $i$:
+
+\begin{definition}[Group Diversion Detector] \label{dfn:detector3}
+The group diversion detector at sensor $i$ is:
+\begin{align} \label{eq:detector_gd}
+x_{GD,i}(t) = \sum_{e \in \N_i}|\Delta S_{ie}(t) - \underset{e \in \N_i}{\text{mean}}(\Delta S_{ie}(t))|
+\end{align}
+\end{definition}
+
+\subsection{Proposed Anomaly Score}
+
+Having computed our detectors, we now define our anomaly score. For each sensor $i$, concatenate its detectors into a vector:
+\begin{align}\label{eq:sensor_vector}
+X_i(t) = [x_{SE,i}(t) \ \  x_{GA,i}(t) \ \ x_{GD,i}(t)]
+\end{align}
+
+Sensor $i$ should label time $t$ as an anomaly if any of the detectors greatly deviate from their historical values. Hence, let $\tilde{\mu}_i(t)$ and $\tilde{\sigma}_i(t)$ be the historical median and inter-quartile range (IQR)\footnote{IQR is a robust measure of spread, equal to the difference between the $75\%$ and $25\%$ quantiles.}~\cite{yule1919introduction} of $X_i(t)$ respectively: i.e. the median and IQR of $X_i(1), \cdots, X_i(t-1)$. We use median and IQR generally instead of mean and standard deviation as they are robust against anomalies, since our goal is to detect anomalies. 
+
+Thus, define the sensor-level anomalousness as the maximum number of IQRs that any detector is away from its historical median: 
+\begin{definition}[Sensor-level anomalousness] \label{dfn:sensorlevel}
+The sensor-level anomalousness is:
+\begin{align}
+a_{i}(t) = \left\Vert \frac{X_i(t) - \tilde{\mu}_i(t)}{ \tilde{\sigma}_i(t)} \right\Vert_\infty
+\end{align}
+\end{definition}
+Here the infinity-norm $\Vert\cdot\Vert_\infty$ is the maximum absolute value over entries of a vector.
+
+Finally, the {\bf overall anomalousness} at time $t$ is the maximum of $a_i(t)$ over all sensors. Taking maximums allows us to determine the {\it location} (not just time) of an anomaly, since we can look at which sensor contributed toward the maximum. 
+
+\begin{definition}[Overall anomalousness]\label{dfn:overall}
+The overall anomalousness at time $t$ is:
+\begin{align}
+A(t) = \max_{i\in \S} a_{i}(t)
+\end{align}
+\end{definition}
+
+Algorithm \ref{alg:methodd} summarizes our \methodD anomaly detection algorithm. Note that we can maintain the median and IQR of a set of numbers in a streaming manner using reservoir sampling~\cite{vitter1985random}. Hence, the \textsc{Normalize} operation in Line \ref{line:normalize} takes a value of $\Delta S_{ie}(t)$, subtracts its historical median and divides by the historical IQR for that sensor. This ensures that sensors with large averages or spread do not dominate.
+
+\begin{algorithm}[h!] 
+	\caption{\methodD online anomaly detection algorithm}
+	\label{alg:methodd}
+	\SetKwInOut{Input}{Input}
+	\SetKwInOut{Output}{Output}
+	\Input{Graph $\G$, voltage $V_i(t)$, current $I_i(t)$}
+	\Output{Anomalousness score $A(t)$ for each $t$, where higher $A(t)$ indicates greater certainty of an anomaly}
+\For{$t$ received as a stream:}{
+	\For{$i\in \S$}{
+		$S_{ie}(t) \gets V_i(t) \cdot I_e^*(t) \ \forall \ e \in \N_i$ \hfill \mycomm{Power}\\
+		$\Delta S_{ie}(t) \gets S_{ie}(t) - S_{ie}(t-1)$ \hfill \mycomm{Power differences}\\
+		$\Delta S_{i\cdot}(t) \gets \textsc{Normalize}(\Delta S_{i\cdot})$ \label{line:normalize}\\
+		Compute detectors $x_{SE,i}(t)$, $x_{GA,i}(t)$ and $x_{GD,i}(t)$ using Eq. \eqref{eq:detector_se} to \eqref{eq:detector_gd}\\
+		Concatenate detectors: $X_i(t) = [x_{SE,i}(t) \ \  x_{GA,i}(t) \ \ x_{GD,i}(t)]$ \\
+		$\tilde{\mu}_i(t) \gets \textsc{UpdateMedian}(\tilde{\mu}_i(t-1), X_i(t))$ \hfill \mycomm{Historical median} \\  
+		$\tilde{\sigma}_i(t) \gets \textsc{UpdateIQR}(\tilde{\sigma}_i(t-1), X_i(t))$ \hfill \mycomm{Historical IQR} \\
+		$a_i(t) \gets \Vert \frac{X_i(t) - \tilde{\mu}_i(t)}{ \tilde{\sigma}_i(t)} \Vert_\infty$ \hfill  \mycomm{Sensor-level anomalousness} \\
+	}
+	$A(t) = \max_{i\in \S} a_{i}(t)$ \hfill \mycomm{Overall anomalousness} \\ 
+}
+\end{algorithm}
+
+\begin{lemma}
+\methodD is online, and requires bounded memory and time.
+\end{lemma}
+\begin{proof}
+We verify from Algorithm \ref{alg:methodd} that \methodD's memory consumption is $O(|\S|)$, and updates in $O(|\S|)$ time per iteration, which are bounded (regardless of the length of the stream). 
+\end{proof}
+
+\section{Sensor Placement: \method} \label{sec:sensor}
+
+So far, we have detected anomalies using a fixed set of sensors. We now consider how to select locations for sensors to place given a fixed budget of $k$ sensors to place. Our main idea will be to construct an optimization objective for the anomaly detection performance of a subset $\S$ of sensor locations, and show that this objective has the `submodularity' property, showing that a greedy approach gives approximation guarantees. 
+
+Note the change in problem setting: we are no longer monitoring for anomalies online in time series data, since we are now assuming that the sensors have not even been installed yet. Instead, we are an offline planner deciding where to place the sensors. To do this, we use a model of the system in the form of its graph $\G$, plugging it into a simulator such as Matpower~\cite{zimmerman2011matpower} to generate a dataset of ground truth anomalies and normal scenarios, where the former contain a randomly chosen edge deletion, and the latter do not.
+
+% Still, the sensor placement problem is closely connected to the anomaly detection problem: the anomaly detection performance of a given $k$ sensors only makes sense in the context of an anomaly detection algorithm. In our case, we are selecting $k$ sensors such that our \methodD algorithm performs well using these sensors. 
+
+\subsection{Proposed Optimization Objective}
+
+Intuitively, we should select sensors $\S$ to maximize the {\bf probability of detecting an anomaly}. This probability can be estimated as the fraction of ground truth anomalies that we successfully detect. Hence, our optimization objective, $f(\S)$, will be the fraction of anomalies that we successfully detect when using \methodD, with sensor set $\S$. We will now formalize this and show that it is submodular.
+
+Specifically, define $X_i(r)$ as the value of sensor $i$ on the $r$th anomaly, analogous to \eqref{eq:sensor_vector}. Also define $\tilde{\mu}_i$ and $\tilde{\sigma}_i$ as the median and IQR of sensor $i$ on the full set of normal scenarios. 
+Also let $a_i(r)$ be the sensor-level anomalousness of the $r$th anomaly, which can be computed as in Definition \ref{dfn:sensorlevel} plugging in $\tilde{\mu}_i$ and $\tilde{\sigma}_i$: 
+\begin{align} \label{eq:a_greedy}
+a_i(r) = \left\Vert \frac{X_i(r) - \tilde{\mu}_i}{\tilde{\sigma}_i}\right\Vert_\infty
+\end{align} 
+Define overall anomalousness w.r.t. $\S$, $A(r, \S)$, analogously to Definition \ref{dfn:overall}:
+\begin{align}
+A(r, \S) = \max_{i \in \S} a_i(r)
+\end{align} 
+Given threshold $c$, anomaly $r$ will be detected by sensor set $\S$ if and only if $A(r,\S) > c$. Hence, our optimization objective is to maximize the fraction of detected anomalies:
+\begin{align}
+\underset{\S \subseteq \V, |S| = k}{\text{maximize}} \ \ f(\S), \text{ where } f(\S) = \frac{1}{s}\sum_{r=1}^s \mathbf{1}\{ A(r, \S) > c \}
+\end{align}
+\subsection{Properties of Objective}
+Our optimization objective $f(\S)$ is submodular: informally, it exhibits diminishing returns. The more sensors we add, the smaller the marginal gain in detection probability.
+\begin{theorem}
+Detection probability $f(\S)$ is submodular, i.e. for all subsets $\T \subseteq \S$ and nodes $i \in \V \setminus \S$:
+\begin{align}
+f(\S \cup \{i\}) - f(\S) \le f(\T \cup \{i\}) - f(\T)
+\end{align}
+\end{theorem}
+\begin{proof}
+\begin{align*}
+f(\S \cup \{i\}) - f(\S) &= \frac{1}{s} \sum_{r=1}^s \left( \mathbf{1}\{A(r, \S \cup \{i\})>c\} - \mathbf{1}\{A(r, \S)>c\} \right) \\
+&= \frac{1}{s} \sum_{r=1}^s \left( \mathbf{1}\{ \max_{j \in \S \cup \{i\}} a_j(r) > c \} - \mathbf{1}\{ \max_{j \in \S} a_j(r) > c\} \right)\\
+&= \frac{1}{s} \sum_{r=1}^s \left( \mathbf{1}\{ a_i(r) > c \wedge \max_{j \in \S} a_j(r) \le c \} \right)\\
+&\le \frac{1}{s} \sum_{r=1}^s \left( \mathbf{1}\{ a_i(r) > c \wedge \max_{j \in \T} a_j(r) \le c \} \right)\\
+&= f(\T \cup \{i\}) - f(\T)
+\end{align*}
+\end{proof}
+
+\begin{theorem}
+$f(\S)$ is nondecreasing, i.e. $f(\T) \le f(\S)$ for all subsets $\T \subseteq \S$.
+\end{theorem}
+\begin{proof}
+\begin{align*}
+f(\S) = \frac{1}{s} \sum_{r=1}^s A(r, \S) = \frac{1}{s} \sum_{r=1}^s \max_{j \in \S} a_j(r) \ge \frac{1}{s} \sum_{r=1}^s \max_{j \in \T} a_j(r) = f(\T)
+\end{align*}
+\end{proof}
+
+\subsection{Proposed \method Algorithm}
+
+We exploit this submodularity using an efficient greedy algorithm that starts from $\S$ as the empty set, and iteratively adds the best sensor to maximize $f(\S)$, until the budget constraint $|S|=k$ is reached. Algorithm \ref{alg:gridwatch} describes our \method algorithm.
+
+\begin{algorithm}[h!] 
+	\caption{\method sensor selection algorithm \label{alg:gridwatch}}
+	\SetKwInOut{Input}{Input}
+	\SetKwInOut{Output}{Output}
+	\Input{Graph $\G$, voltage $V_i(t)$, current $I_i(t)$, budget $k$, sensor scores $a_i(r)$ from \eqref{eq:a_greedy}}
+	\Output{Chosen sensor set $\S$}
+	$\S = \{\}$ \\
+	Initialize $A(r)=0 \ \forall\ r \in \S$ \hfill \mycomm{Overall anomalousness is all zero since $\S = \{\}$}\\ 
+\While{$|\S| < k$}{
+	\For{$i \notin \S$}{
+		$\delta_i \gets \frac{1}{s}\sum_{r=1}^s \mathbf{1}\{ \max(A(r), a_{i}(r)) > c\}$ \hfill \mycomm{Objective value if we added $i$ to $\S$}\\
+	}
+	$i^* \gets \underset{i \notin \S}{\arg\max} \ \delta_i$ \hfill \mycomm{Greedily add the sensor that maximizes objective}\\
+	$\S \gets \S \cup \{ i^* \}$\\
+	$A(r) = \max(A(r), a_{i^*}(r)) \ \forall\ r \in \S$\\
+}
+\end{algorithm}
+
+
+\subsection{Approximation Bound}
+
+The nondecreasing and submodularity properties of $f$ imply that Algorithm \ref{alg:gridwatch} achieves at least $1-1/e$ $(\approx 63\%)$ of the value of the optimal sensor placement. Letting $\hat{\S}$ be the set returned by Algorithm \ref{alg:gridwatch}, and $\S^*$ be the optimal set:
+\begin{theorem}
+\begin{align}
+f(\hat{\S}) \ge (1-1/e) f(S^*)
+\end{align}
+\end{theorem}
+\begin{proof}
+This follows from \cite{nemhauser1978analysis} since $f$ is nondecreasing and submodular. 
+\end{proof}
+% \subsection{Flexibility}
+
+% \method is a flexible algorithm that can be extended in various ways:
+
+% \paragraph{Variable sensor costs.} Rather than having a fixed budget of $k$ sensors, we may assume a variable cost $c_i$ of installing the $i$th sensor, and then select sensors that do not exceed a constraint on total cost. In this case, we would modify the greedy algorithm to pick the sensor that most increases the objective per unit cost: i.e. dividing the gain of picking sensor $i$ by $c_i$ at each step. 
+
+% \paragraph{Initial sensors.} In some settings, sensors may already exist in the grid, and we need to select positions for $k$ additional sensors to install. In this case, we run Algorithm \ref{alg:gridwatch} starting with the given sensors as an initial set. 

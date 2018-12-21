@@ -1,0 +1,28 @@
+In this paper, we proposed \methodD, an online algorithm that accurately detects anomalies in power grid data. The main idea of \methodD is to design domain-aware detectors that combine information at each sensor appropriately. We then proposed \method, a sensor placement algorithm, which uses a submodular optimization objective. While our method could be technically applied to any type of graph-based sensor data (not just power grids), the choice of our detectors is motivated by our power grid setting. Hence, future work could study how sensitive various detectors are for detecting anomalies in graph-based sensor data from different domains.
+
+Our contributions are as follows:
+\ben
+\item {\bf Online anomaly detection:} we propose a novel, online anomaly detection algorithm, \methodD that outperforms existing approaches.
+\item {\bf Sensor placement:} we construct an optimization objective for sensor placement, with the goal of maximizing the probability of detecting an anomaly. We show that this objective is submodular, which we exploit in our sensor placement algorithm.
+\item {\bf Effectiveness:} Due to submodularity, \method, our sensor placement algorithm is provably near-optimal. In addition, both our algorithms outperform existing approaches in accuracy by $59\%$ or more (F-measure) in experiments. 
+\item {\bf Scalability:} Our algorithms scale linearly, and \methodD is online, requiring bounded space and constant time per update. 
+\een
+\textbf{Reproducibility:} our code and data are publicly available at \codeurl.
+
+% \noindent \textbf{Acknowledgments:} This material is based upon work
+%    supported by the National Science Foundation
+%    under Grants No.
+%    % IIS-1247489, % with nikos and tom - umn: IIS-1247632  - mainly: Vagelis - tensors
+%    CNS-1314632, % with Michalis and Tina - mainly: Vagelis, maybe Neil/Alex - anything that has to do with malware, and/or fraud
+%    IIS-1408924, % with Leman - review fraud, BP
+%    % for work on the ARL CTA grant with UIUC - Bruno, Prithwish, Xifeng
+%    % mainly, for Alex, Vagelis, Miguel, Sunhee, Stephan
+%    % Research was sponsored 
+%    and by the Army Research Laboratory 
+%    under Cooperative Agreement Number W911NF-09-2-0053, by the Image Analysis and Machine Learning Platform -ERI/TIC/0028/14 grant, and by Beijing NSF No. 4172059. Shenghua Liu is also supported by the scholarship from China Scholarship Council.
+%    Any opinions, findings, and conclusions or recommendations expressed in this
+%    material are those of the author(s) and do not necessarily reflect the views
+%    of the National Science Foundation, or other funding parties.
+%    The U.S. Government is authorized to reproduce and 
+%    distribute reprints for Government purposes notwithstanding 
+%    any copyright notation here on.

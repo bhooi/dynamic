@@ -1,0 +1,345 @@
+missing module named pyimod03_importers - imported by /Users/bryanhooi/anaconda/lib/python2.7/site-packages/PyInstaller/loader/rthooks/pyi_rth_pkgres.py
+missing module named 'multiprocessing.popen_fork' - imported by /Users/bryanhooi/anaconda/lib/python2.7/site-packages/PyInstaller/loader/rthooks/pyi_rth_multiprocessing.py
+missing module named 'multiprocessing.popen_spawn_win32' - imported by /Users/bryanhooi/anaconda/lib/python2.7/site-packages/PyInstaller/loader/rthooks/pyi_rth_multiprocessing.py
+missing module named 'multiprocessing.spawn' - imported by /Users/bryanhooi/anaconda/lib/python2.7/site-packages/PyInstaller/loader/rthooks/pyi_rth_multiprocessing.py
+missing module named _datetime - imported by future.backports.datetime, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _pybsddb - imported by bsddb, bsddb.db, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named bsddb3 - imported by bsddb, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _bsddb - imported by bsddb, bsddb.db, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'requests.packages.urllib3.packages.six.moves.urllib' - imported by 'requests.packages.urllib3.packages.six.moves.urllib', /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'six.moves.urllib_parse' - imported by 'six.moves.urllib_parse', /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'six.moves.urllib' - imported by 'six.moves.urllib', /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named Parser - imported by Cython.Compiler.Main, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pyximport.test - imported by pyximport, pyximport.pyxbuild, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named dl - imported by setuptools.command.build_ext, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'multiprocessing.context' - imported by sklearn.externals.joblib._multiprocessing_helpers, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.expand_dims - imported by numpy, numpy.ma.core, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.log1p - imported by numpy, scipy.stats._discrete_distns, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.expm1 - imported by numpy, scipy.stats._discrete_distns, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.tanh - imported by numpy, scipy.stats._discrete_distns, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.cosh - imported by numpy, scipy.stats._discrete_distns, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.sinh - imported by numpy, scipy.stats._discrete_distns, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.log - imported by numpy, scipy.stats._distn_infrastructure, scipy.stats._discrete_distns, scipy.stats.morestats, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.hypot - imported by numpy, scipy.stats.morestats, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.logical_and - imported by numpy, scipy.stats._distn_infrastructure, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.NINF - imported by numpy, scipy.stats._distn_infrastructure, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.power - imported by numpy, scipy.stats.kde, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.amin - imported by numpy, numpy.ma.core, scipy.misc.pilutil, scipy.stats.morestats, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named ImageFilter - imported by scipy.misc.pilutil, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named org - imported by copy, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'PyQt5.QtWidgets' - imported by matplotlib.pyplot, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named gi - imported by matplotlib.pyplot, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'matplotlib.externals.six.moves' - imported by matplotlib.cbook, matplotlib.finance, matplotlib.dates, matplotlib.hatch, matplotlib.collections, matplotlib.colors, matplotlib.patches, matplotlib.backend_bases, matplotlib.widgets, matplotlib.mlab, matplotlib.contour, matplotlib.font_manager, matplotlib.afm, matplotlib.text, matplotlib.markers, matplotlib.textpath, matplotlib.image, matplotlib.colorbar, matplotlib.gridspec, matplotlib.axes._subplots, matplotlib.axes._axes, matplotlib.legend, matplotlib.offsetbox, matplotlib.legend_handler, matplotlib.stackplot, matplotlib.streamplot, matplotlib.table, matplotlib.axes._base, matplotlib.dviread, matplotlib.backends.backend_svg, matplotlib.tri.triinterpolate, matplotlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, matplotlib.backends.qt_editor.formlayout, matplotlib.backends.backend_tkagg, matplotlib.backends.tkagg, matplotlib.backends.backend_ps
+missing module named testrepository - imported by pbr.testr_command, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named Sybase - imported by sqlalchemy.dialects.sybase.pysybase
+missing module named pysqlcipher - imported by sqlalchemy.dialects.sqlite.pysqlcipher
+missing module named 'com.ziclix' - imported by sqlalchemy.connectors.zxJDBC, sqlalchemy.dialects.postgresql.zxjdbc, sqlalchemy.dialects.oracle.zxjdbc
+missing module named postgresql - imported by sqlalchemy.dialects.postgresql.pypostgresql
+missing module named 'java.sql' - imported by sqlalchemy.dialects.oracle.zxjdbc
+missing module named cx_Oracle - imported by sqlalchemy.dialects.oracle.cx_oracle
+missing module named 'google.storage' - imported by sqlalchemy.dialects.mysql.gaerdbms
+missing module named 'google.appengine' - imported by sqlalchemy.dialects.mysql.gaerdbms
+missing module named 'mysql.connector' - imported by sqlalchemy.dialects.mysql.mysqlconnector
+missing module named mysql - imported by sqlalchemy.dialects.mysql.mysqlconnector
+missing module named 'mx.ODBC' - imported by sqlalchemy.connectors.mxodbc
+missing module named mx - imported by sqlalchemy.connectors.mxodbc
+missing module named psycopg2 - imported by sqlalchemy.dialects.postgresql.psycopg2, sqlalchemy
+missing module named xapian - imported by sphinx.websupport.search.xapiansearch
+missing module named 'whoosh.analysis' - imported by sphinx.websupport.search.whooshsearch
+missing module named 'whoosh.qparser' - imported by sphinx.websupport.search.whooshsearch
+missing module named 'whoosh.fields' - imported by sphinx.websupport.search.whooshsearch
+missing module named whoosh - imported by sphinx.websupport.search.whooshsearch
+missing module named janome - imported by sphinx.search.ja
+missing module named MeCab - imported by sphinx.search.ja
+missing module named jieba - imported by sphinx.search.zh
+missing module named "'six.moves.urllib'.error" - imported by sphinx.builders.linkcheck
+missing module named "'six.moves.urllib'.request" - imported by sphinx.builders.linkcheck
+missing module named cElementTree - imported by sphinx.builders.devhelp
+missing module named 'elementtree.ElementTree' - imported by sphinx.builders.devhelp
+missing module named ctags - imported by pygments.formatters.html, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named Levenshtein - imported by sphinx.versioning, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named Image - imported by docutils.parsers.rst.directives.images, sphinx.util.images, docutils.writers.html4css1, scipy.misc.pilutil, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, docutils.writers.odf_odt, sphinx.builders.epub
+missing module named roman - imported by docutils.writers.latex2e, docutils.writers.manpage, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named typing - imported by sphinx.ext.autodoc, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named Stemmer - imported by sphinx.search.en, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, snowballstemmer, sphinx.search.zh
+missing module named "'six.moves.urllib'.parse" - imported by sphinx.util, sphinx.quickstart, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, sphinx.builders.linkcheck, sphinx.ext.intersphinx
+missing module named elementtree - imported by docutils.writers.odf_odt
+missing module named faulthandler - imported by matplotlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'IPython.kernel.zmq' - imported by IPython, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named __pypy__ - imported by jinja2.debug, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'jinja2.debugrenderer' - imported by jinja2.debug, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pretty - imported by jinja2.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pysqlite2 - imported by IPython.core.history, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, sqlalchemy.dialects.sqlite.pysqlite, sqlalchemy
+missing module named selectors - imported by prompt_toolkit.eventloop.select, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.formatters.HtmlFormatter - imported by pygments.formatters, Cython.Compiler.Annotate, sphinx.highlighting, nbconvert.filters.highlight, nbconvert.filters.markdown_mistune, nbconvert.preprocessors.csshtmlheader, IPython.core.oinspect, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.formatters.LatexFormatter - imported by pygments.formatters, sphinx.highlighting, nbconvert.filters.highlight, nbconvert.preprocessors.latex, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named PIL._imagingagg - imported by PIL, PIL.ImageDraw
+missing module named pygments.lexers.CythonLexer - imported by pygments.lexers, Cython.Compiler.Annotate, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.lexers.PythonLexer - imported by pygments.lexers, sphinx.highlighting, IPython.lib.lexers, IPython.core.oinspect, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.lexers.Python3Lexer - imported by pygments.lexers, sphinx.highlighting, IPython.lib.lexers, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.lexers.PythonConsoleLexer - imported by pygments.lexers, sphinx.highlighting, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.lexers.CLexer - imported by pygments.lexers, sphinx.highlighting, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.lexers.TextLexer - imported by pygments.lexers, sphinx.highlighting, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.lexers.RstLexer - imported by pygments.lexers, sphinx.highlighting, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pygments.lexers.BashLexer - imported by pygments.lexers, IPython.lib.lexers, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named win_unicode_console - imported by IPython.terminal.interactiveshell, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'win_unicode_console.streams' - imported by IPython.terminal.interactiveshell, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'unittest.mock' - imported by IPython.testing.tools, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named testpath - imported by IPython.testing.plugin.ipdoctest, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named coverage - imported by IPython.testing.iptestcontroller, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'coverage.html' - imported by IPython.testing.iptestcontroller, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named win32clipboard - imported by IPython.lib.clipboard, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named docrepr - imported by IPython.core.interactiveshell, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named dill.diff - imported by dill, dill.dill, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named number - imported by dill._objects, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named cloudpickle - imported by ipykernel.pickleutil, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named ipykernel.get_connection_file - imported by ipykernel, ipykernel.zmqshell, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named ipykernel.get_connection_info - imported by ipykernel, ipykernel.zmqshell, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named ipykernel.connect_qtconsole - imported by ipykernel, ipykernel.zmqshell, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named netifaces - imported by jupyter_client.localinterfaces, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named paramiko - imported by zmq.ssh.tunnel, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named sgi - imported by pty, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named async - imported by pexpect.spawnbase, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _winapi - imported by jupyter_client.launcher, ipykernel.parentpoller, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.libzmq - imported by /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.EAGAIN - imported by zmq, zmq.error, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.ETERM - imported by zmq, zmq.error, zmq.devices.basedevice, zmq.eventloop.ioloop, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.zmq_version - imported by zmq, zmq.error, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.zmq_version_info - imported by zmq, zmq.error, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.constants - imported by zmq.backend, zmq.sugar.constants, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.Context - imported by zmq.backend, zmq.sugar.context, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pyczmq - imported by zmq.sugar.context, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.zmq_poll - imported by zmq.backend, zmq.sugar.poll, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.Socket - imported by zmq.backend, zmq.sugar.socket, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.Frame - imported by zmq.backend, zmq.sugar.frame, zmq.sugar.tracker, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.zmq_version_info - imported by zmq.backend, zmq.sugar.version, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.strerror - imported by zmq.backend, zmq.error, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.backend.zmq_errno - imported by zmq.backend, zmq.error, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.device - imported by zmq, zmq.devices, zmq.devices.basedevice, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.QUEUE - imported by zmq, zmq.devices.basedevice, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named zmq.PUB - imported by zmq, zmq.devices.monitoredqueuedevice, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named OpenGL - imported by IPython.lib.inputhook, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'OpenGL.platform' - imported by IPython.lib.inputhookglut, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'OpenGL.GLUT' - imported by IPython.lib.inputhookglut, IPython.lib.inputhook, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named glut_support - imported by IPython.lib.inputhook, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pyglet - imported by IPython.lib.inputhookpyglet, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'importlib.util' - imported by IPython.utils.openpy, IPython.external.qt_loaders, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named PySide2 - imported by IPython.external.qt_loaders, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named wx - imported by matplotlib.pyplot, IPython.lib.inputhook, IPython.lib.inputhookwx, IPython.lib.guisupport, ipykernel.eventloops, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named gobject - imported by matplotlib.pyplot, IPython.lib.inputhookgtk, ipykernel.gui.gtkembed, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named gtk - imported by ipykernel.gui.gtkembed, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'gi.repository' - imported by IPython.lib.inputhookgtk3, ipykernel.gui.gtk3embed, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named rfc3987 - imported by jsonschema._format, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named strict_rfc3339 - imported by jsonschema._format, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named isodate - imported by jsonschema._format, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named webcolors - imported by jsonschema._format, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named socks - imported by requests.packages.urllib3.contrib.socks, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named urllib3 - imported by requests.packages, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named chardet - imported by pygments.lexer, requests.packages, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named simplejson - imported by requests.compat, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named "'requests.packages.urllib3.packages.six.moves.urllib'.parse" - imported by requests.packages.urllib3.request, requests.packages.urllib3.poolmanager, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+runtime module named requests.packages.urllib3.packages.six.moves - imported by httplib, requests.packages.urllib3.connectionpool, requests.packages.urllib3.util.response, 'requests.packages.urllib3.packages.six.moves.urllib', requests.packages.urllib3.response, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named  - imported by nbformat.validator, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named traitlets.config.Application - imported by traitlets.config, traitlets.log, ipykernel.pickleutil, ipykernel.kernelspec, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named System - imported by traitlets.traitlets, IPython.utils._process_cli, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.random.rand - imported by numpy.random, scipy, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.random.randn - imported by numpy.random, scipy, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.random.randint - imported by numpy.random, scipy.stats.kde, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.random.multivariate_normal - imported by numpy.random, scipy.stats.kde, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'mpl_toolkits.natgrid' - imported by matplotlib.mlab, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named matplotlib.axes.Axes - imported by matplotlib.axes, matplotlib.legend, matplotlib.projections.geo, matplotlib.projections.polar, matplotlib.pyplot, matplotlib.figure, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named dateutil.tz.tzfile - imported by dateutil.tz, dateutil.zoneinfo, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named java - imported by xml.sax._exceptions, mock.mock, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'IPython.kernel.comm' - imported by matplotlib.backends.backend_nbagg
+missing module named 'matplotlib._windowing' - imported by matplotlib.backends.windowing
+missing module named PIL._webp - imported by PIL, PIL.WebPImagePlugin
+missing module named cffi._pycparser - imported by cffi, cffi.cparser, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named testing - imported by cffi.recompiler, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _imaging_gif - imported by PIL.GifImagePlugin, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named PyQt5 - imported by /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, matplotlib.backends.qt_compat
+missing module named 'PyQt5.QtCore' - imported by PIL.ImageQt, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named PySide - imported by /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, matplotlib.backends.qt_compat
+missing module named 'PySide.QtCore' - imported by PIL.ImageQt, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, /Users/bryanhooi/anaconda/lib/python2.7/site-packages/PyInstaller/loader/rthooks/pyi_rth_qt4plugins.py
+missing module named asyncio - imported by tornado.platform.asyncio, prompt_toolkit.eventloop.asyncio_win32, prompt_toolkit.eventloop.asyncio_posix, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named trollius - imported by tornado.platform.asyncio, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named monotime - imported by tornado.platform.auto, zmq.eventloop.minitornado.platform.auto, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'collections.abc' - imported by tornado.gen, backports_abc, jsonschema.compat, matplotlib.rcsetup, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named ordereddict - imported by funcsigs, singledispatch_helpers, pyparsing, dill, dill._objects, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, pkg_resources._vendor.pyparsing
+missing module named win32wnet - imported by uuid, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named netbios - imported by uuid, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named six.moves.range - imported by six.moves, sphinx.util, sphinx.directives.other, sphinx.versioning, sphinx.writers.texinfo, prompt_toolkit.utils, prompt_toolkit.document, prompt_toolkit.buffer, prompt_toolkit.layout.containers, prompt_toolkit.layout.controls, prompt_toolkit.layout.lexers, prompt_toolkit.layout.processors, prompt_toolkit.layout.margins, prompt_toolkit.styles.from_dict, prompt_toolkit.renderer, prompt_toolkit.key_binding.bindings.named_commands, prompt_toolkit.key_binding.bindings.scroll, prompt_toolkit.key_binding.bindings.vi, prompt_toolkit.layout.menus, prompt_toolkit.terminal.vt100_output, prompt_toolkit.terminal.win32_input, prompt_toolkit.key_binding.input_processor, prompt_toolkit.terminal.vt100_input, dateutil.rrule, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, sphinx.ext.napoleon.docstring
+missing module named six.moves.input - imported by six.moves, sphinx.quickstart, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named six.moves.map - imported by six.moves, prompt_toolkit.document, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named six.moves.winreg - imported by six.moves, dateutil.tz.win, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+runtime module named six.moves - imported by cryptography.x509.general_name, cryptography.hazmat.backends.openssl.decode_asn1, sphinx.application, sphinx.locale, sphinx.util, 'six.moves.urllib', sphinx.util.pycompat, sphinx.directives.other, sphinx.environment, sphinx.versioning, sphinx.writers.text, sphinx.writers.texinfo, sphinx.builders.html, sphinx.util.jsonimpl, sphinx.search, sphinx.theming, sphinx.util.inspect, sphinx.quickstart, prompt_toolkit.utils, prompt_toolkit.document, prompt_toolkit.buffer, prompt_toolkit.layout.containers, prompt_toolkit.layout.controls, prompt_toolkit.layout.lexers, prompt_toolkit.layout.processors, prompt_toolkit.layout.margins, prompt_toolkit.styles.from_dict, prompt_toolkit.renderer, prompt_toolkit.key_binding.bindings.named_commands, prompt_toolkit.key_binding.bindings.scroll, prompt_toolkit.key_binding.bindings.vi, prompt_toolkit.layout.menus, prompt_toolkit.terminal.vt100_output, prompt_toolkit.terminal.win32_input, prompt_toolkit.key_binding.input_processor, prompt_toolkit.terminal.vt100_input, dateutil.rrule, dateutil.tz._common, dateutil.tz.win, cycler, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, sphinx.builders.linkcheck, HTMLParser, sphinx.ext.inheritance_diagram, sphinx.ext.coverage, sphinx.ext.napoleon.docstring, sphinx.websupport
+missing module named six.moves.zip - imported by six.moves, cycler, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named six.moves.reduce - imported by six.moves, cycler, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named matplotlib.tri.Triangulation - imported by matplotlib.tri, matplotlib.tri.trifinder, matplotlib.tri.tritools, matplotlib.tri.triinterpolate, matplotlib.mlab, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.spatial.cKDTree - imported by scipy.spatial, scipy.interpolate.ndgriddata, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.airy - imported by scipy.special, scipy.special.orthogonal, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.less - imported by numpy, scipy.special.basic, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.gammaln - imported by scipy.special, scipy.special.spfun_stats, scipy.integrate.quadrature, scipy.stats._discrete_distns, scipy.stats._multivariate, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.xlogy - imported by scipy.special, scipy.interpolate.rbf, scipy.stats._distn_infrastructure, scipy.stats._multivariate, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.chndtr - imported by scipy.special, scipy.stats._distn_infrastructure, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.entr - imported by scipy.special, scipy.stats._distn_infrastructure, scipy.stats._discrete_distns, scipy.stats._multivariate, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.rel_entr - imported by scipy.special, scipy.stats._distn_infrastructure, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.kl_div - imported by scipy.special, scipy.stats._distn_infrastructure, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.ive - imported by scipy.special, scipy.stats._distn_infrastructure, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.beta - imported by scipy.special, scipy.stats._tukeylambda_stats, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.betaln - imported by scipy.special, scipy.stats._discrete_distns, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.gammainc - imported by scipy.special, sklearn.neighbors.kde, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.erf - imported by scipy.special, sklearn.gaussian_process.gpc, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.special.expit - imported by scipy.special, sklearn.gaussian_process.gpc, sklearn.ensemble.gradient_boosting, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'sklearn.externals.six.moves' - imported by sklearn.utils.extmath, sklearn.multiclass, sklearn.ensemble.bagging, sklearn.ensemble.weight_boosting, sklearn.ensemble.partial_dependence, sklearn.random_projection, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.logical_not - imported by numpy, scipy.linalg.matfuncs, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.conjugate - imported by numpy, scipy.linalg.matfuncs, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.amax - imported by numpy, numpy.ma.core, scipy.linalg.matfuncs, scipy.misc.pilutil, scipy.stats.morestats, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.single - imported by numpy, scipy.linalg.decomp_schur, scipy.linalg.matfuncs, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.greater - imported by numpy, scipy.optimize.minpack, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.sign - imported by numpy, scipy.linalg.matfuncs, scipy.optimize.zeros, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.float64 - imported by numpy, scipy.optimize.lbfgsb, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.double - imported by numpy, scipy.optimize.nnls, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.sparse.linalg.onenormest - imported by scipy.sparse.linalg, scipy.linalg._matfuncs_inv_ssq, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.ones - imported by scipy, scipy.sparse.linalg.isolve.minres, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.arange - imported by scipy, scipy.sparse.linalg.isolve.minres, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.linalg.qr_insert - imported by scipy.linalg, scipy.sparse.linalg.isolve._gcrotmk, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scikits - imported by scipy.sparse.linalg.dsolve.linsolve, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.linalg._clapack - imported by scipy.linalg, scipy.linalg.lapack, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.linalg._cblas - imported by scipy.linalg, scipy.linalg.blas, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.inexact - imported by numpy, scipy.linalg.decomp, scipy.special.basic, scipy.optimize.minpack, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.iscomplexobj - imported by numpy, numpy.ma.core, scipy.linalg.decomp, scipy.misc.pilutil, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.conj - imported by numpy, scipy.linalg.decomp, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.arccos - imported by numpy, scipy.linalg.decomp_svd, scipy.special.orthogonal, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.arcsin - imported by numpy, scipy.linalg.decomp_svd, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.testing.jiffies - imported by numpy.testing, numpy.f2py.f2py_testing, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.testing.memusage - imported by numpy.testing, numpy.f2py.f2py_testing, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named win32api - imported by distutils.msvccompiler, IPython.utils._process_win32, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, pkg_resources._vendor.appdirs
+missing module named win32con - imported by distutils.msvccompiler, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named Numeric - imported by numpy.distutils.system_info, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numarray - imported by numpy.distutils.system_info, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named __svn_version__ - imported by numpy.f2py.__version__, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy_distutils - imported by numpy.f2py.diagnose, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'numpy_distutils.command' - imported by numpy.f2py.diagnose, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'numpy_distutils.fcompiler' - imported by numpy.f2py.diagnose, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'numpy_distutils.cpuinfo' - imported by numpy.f2py.diagnose, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.float32 - imported by numpy.core, numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'setuptools.extern.six' - imported by setuptools, setuptools.extension, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named wincertstore - imported by setuptools.ssl_support, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named configparser - imported by setuptools.py36compat, numpy.distutils.system_info, numpy.distutils.npy_pkg_config, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, sqlalchemy.util.compat
+missing module named setuptools.extern.six - imported by setuptools.extern, setuptools.monkey, setuptools.dist, setuptools.py33compat, setuptools.config, setuptools.command.easy_install, setuptools.sandbox, setuptools.py27compat, setuptools.package_index, setuptools.command.bdist_egg, setuptools.command.egg_info, setuptools.command.sdist, setuptools.unicode_utils, setuptools.glob, setuptools.command.build_ext, setuptools.command.develop, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'setuptools.extern.six.moves' - imported by setuptools.dist, setuptools.command.easy_install, setuptools.sandbox, setuptools.command.setopt, setuptools.package_index, setuptools.ssl_support, setuptools.command.egg_info, setuptools.command.py36compat, setuptools.namespaces, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, setuptools.msvc
+missing module named 'pkg_resources.extern.packaging.version' - imported by setuptools.msvc
+missing module named win32evtlogutil - imported by logging.handlers, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named win32evtlog - imported by logging.handlers, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named unittest2 - imported by nose.plugins.skip, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named clr - imported by nose.suite, IPython.utils._process_cli, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named IronPython - imported by nose.suite, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _xmlrpclib - imported by xmlrpclib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.float64 - imported by numpy.core, numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named win32pdh - imported by numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.signbit - imported by numpy.core, numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.lib.triu - imported by numpy.lib, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.lib.i0 - imported by numpy.lib, numpy.dual, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.histogramdd - imported by numpy, numpy.lib.twodim_base, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.single - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.double - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.csingle - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.cdouble - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.inexact - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.complexfloating - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.add - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.sqrt - imported by numpy.core, numpy.fft.fftpack, numpy.linalg.linalg, scipy.sparse.linalg._norm, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.maximum - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.geterrobj - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.longdouble - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.intp - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.object_ - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.divide - imported by numpy.core, numpy.linalg.linalg, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.conjugate - imported by numpy.core, numpy.fft.fftpack, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.integer - imported by numpy.core, numpy.fft.helper, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.linalg.inv - imported by numpy.linalg, numpy.matrixlib.defmatrix, numpy.lib.polynomial, matplotlib.transforms, scipy.linalg._solvers, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named lzma - imported by numpy.lib._datasource, sklearn.externals.joblib.numpy_pickle_utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'urllib.parse' - imported by setuptools.py26compat, setuptools.package_index, numpy.lib._datasource, pathlib2, asn1crypto._iri, requests.compat, jinja2._compat, IPython.lib.display, notebook.nbextensions, tornado.escape, tornado.httputil, tornado.web, notebook.utils, jsonschema.compat, nbconvert.filters.strings, tornado.simple_httpclient, tornado.websocket, IPython.core.extensions, sklearn.externals.joblib.func_inspect, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, _pytest.pastebin, sqlalchemy.util.compat
+missing module named 'urllib.request' - imported by numpy.lib._datasource, requests.compat, IPython.lib.display, notebook.nbextensions, jsonschema.compat, IPython.utils.openpy, IPython.core.magics.code, IPython.core.display, IPython.core.extensions, IPython.core.interactiveshell, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, pygments.lexers._php_builtins, pygments.lexers._postgres_builtins, pygments.lexers._lua_builtins, pygments.lexers._sourcemod_builtins, _pytest.pastebin
+missing module named 'urllib.error' - imported by numpy.lib._datasource, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.bool_ - imported by numpy, numpy.ma.core, numpy.ma.mrecords, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.dtype - imported by numpy, numpy.ma.mrecords, numpy.ctypeslib, scipy.optimize.minpack, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.ndarray - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib, dill.dill, IPython.core.magics.namespace, scipy.stats._distn_infrastructure, scipy.stats.mstats_basic, scipy.stats.mstats_extras, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.recarray - imported by numpy, numpy.ma.mrecords, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.array - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib, dill._objects, scipy.sparse.linalg.isolve.utils, scipy.linalg.decomp, scipy.misc.common, scipy.interpolate.interpolate, scipy.interpolate._fitpack_impl, scipy.interpolate.fitpack2, scipy.misc.pilutil, scipy.stats.stats, scipy.optimize.lbfgsb, scipy.optimize.tnc, scipy.optimize.slsqp, scipy.optimize.minpack, scipy.integrate._ode, scipy.stats.morestats, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.lib.iscomplexobj - imported by numpy.lib, numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.lib.real - imported by numpy.lib, numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.lib.imag - imported by numpy.lib, numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.core.number - imported by numpy.core, numpy.testing.nose_tools.utils, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named reprlib.recursive_repr - imported by reprlib, future.backports.misc, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named test - imported by future.standard_library, UserString, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'test.support' - imported by future.moves.test.support, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'test.test_support' - imported by future.moves.test.support, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'dbm.dumb' - imported by future.moves.dbm.dumb, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'dbm.gnu' - imported by future.moves.dbm.gnu, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named gdbm - imported by anydbm, future.moves.dbm.gnu, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'dbm.ndbm' - imported by future.moves.dbm.ndbm, dill._objects, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named importlib.reload - imported by importlib, IPython.core.extensions, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named builtins.bool - imported by builtins, numpy.core.numerictypes, numpy.lib._iotools, numpy, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named builtins.float - imported by builtins, numpy.core.numerictypes, numpy.lib._iotools, numpy, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named builtins.complex - imported by builtins, numpy.core.numerictypes, numpy.lib._iotools, numpy, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named numpy.eye - imported by numpy, numpy.core.numeric, scipy.interpolate._pade, scipy.optimize.optimize, scipy.optimize.minpack, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _thread.allocate_lock - imported by _thread, cffi.lock, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _thread.RLock - imported by _thread, pyparsing, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, pkg_resources._vendor.pyparsing
+missing module named _thread.LockType - imported by _thread, dill.dill, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _thread.interrupt_main - imported by _thread, ipykernel.parentpoller, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _thread.get_ident - imported by _thread, future.backports.misc, numpy.core.arrayprint, singledispatch_helpers, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pathlib - imported by numpy.compat.py3k, pickleshare, PIL.Image, IPython.utils.text, sklearn.externals.joblib.numpy_pickle, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named nt - imported by os, ntpath, pathlib2, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named os2 - imported by os, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _emx_link - imported by os, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named ce - imported by os, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named riscos - imported by os, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named riscospath - imported by os, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named riscosenviron - imported by os, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named py.process - imported by py, py._path.svnurl
+missing module named py.path - imported by py, py._path.svnurl
+missing module named win32pipe - imported by platform, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named winreg.OpenKeyEx - imported by winreg, platform, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named winreg.QueryValueEx - imported by winreg, platform, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named winreg.CloseKey - imported by winreg, platform, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named winreg.HKEY_LOCAL_MACHINE - imported by winreg, platform, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'java.lang' - imported by platform, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named vms_lib - imported by platform, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named rourl2path - imported by urllib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named SOCKS - imported by ftplib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named OverrideFrom23 - imported by Carbon.Res, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _winreg - imported by mimetypes, urllib, winreg, platform, distutils.msvccompiler, distutils.msvc9compiler, numpy.distutils.cpuinfo, requests.utils, IPython.utils.path, babel.localtime._win32, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, pygments.formatters.img, pkg_resources._vendor.appdirs
+missing module named _imp - imported by pkg_resources, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pkg_resources.extern.six - imported by pkg_resources.extern, pkg_resources, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'pkg_resources.extern.six.moves' - imported by pkg_resources, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, pkg_resources._vendor.packaging.requirements
+missing module named 'importlib.machinery' - imported by pkg_resources, numpy.compat.py3k, cffi.verifier, IPython.core.completerlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pkg_resources.extern.appdirs - imported by pkg_resources.extern, pkg_resources, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named pkg_resources.extern.packaging - imported by pkg_resources.extern, pkg_resources, setuptools.dist, setuptools.command.egg_info, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.requirements, pkg_resources._vendor.packaging.markers
+missing module named 'win32com.shell' - imported by pkg_resources._vendor.appdirs
+missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
+missing module named com - imported by pkg_resources._vendor.appdirs
+missing module named win32com - imported by pkg_resources._vendor.appdirs
+missing module named pluggy - imported by _pytest._pluggy, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named twisted - imported by _pytest.unittest
+missing module named zope - imported by _pytest.unittest
+missing module named 'py.builtin' - imported by py._io.terminalwriter, _pytest.monkeypatch, _pytest.pytester
+missing module named 'py.io' - imported by _pytest.capture
+missing module named msvcrt - imported by subprocess, getpass, multiprocessing.forking, numpy.distutils.mingw32ccompiler, prompt_toolkit.terminal.win32_input, prompt_toolkit.eventloop.win32, IPython.lib.inputhook, IPython.lib.inputhookglut, IPython.lib.inputhookpyglet, IPython.core.page, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _subprocess - imported by subprocess, multiprocessing.forking, multiprocessing.reduction, jupyter_client.launcher, ipykernel.parentpoller, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named 'org.python' - imported by pickle, xml.sax, setuptools.sandbox, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named unittest.mock - imported by unittest, matplotlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py, sqlalchemy.testing.mock
+missing module named unittest._WritelnDecorator - imported by unittest, nose.plugins.multiprocess, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _dummy_threading - imported by dummy_threading, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _sha - imported by hashlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _md5 - imported by hashlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _sha256 - imported by hashlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _sha512 - imported by hashlib, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named psutil._psutil_linux - imported by psutil, psutil._pslinux, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named psutil._psutil_windows - imported by psutil, psutil._pswindows, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named psutil._psutil_bsd - imported by psutil, psutil._psbsd, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named _xmlplus - imported by xml, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named ElementC14N - imported by xml.etree.ElementTree, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named psutil._psutil_sunos - imported by psutil, psutil._pssunos, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py
+missing module named scipy.sparse.coo_matrix - imported by scipy.sparse, scipy.sparse.data, sklearn.utils.fixes, scipy.optimize._numdiff, scipy.integrate._bvp, scipy.integrate._ivp.common, sklearn.metrics.classification, /Users/bryanhooi/Desktop/bryan-papers/power/dynamic/code/detection/anomaly_detector.py

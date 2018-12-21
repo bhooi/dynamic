@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper.aux
+The style file: splncs03.bst
+Database file #1: BIB/gridanom.bib
+Warning--to sort, need author or key in 118bus
+Warning--can't use both volume and number fields in breunig2000lof
+Warning--can't use both volume and number fields in ramaswamy2000efficient
+You've used 38 entries,
+            2785 wiz_defined-function locations,
+            810 strings with 11291 characters,
+and the built_in function-call counts, 23764 in all, are:
+= -- 2065
+> -- 725
+< -- 53
++ -- 305
+- -- 260
+* -- 1484
+:= -- 2969
+add.period$ -- 70
+call.type$ -- 38
+change.case$ -- 277
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 2051
+empty$ -- 2058
+format.name$ -- 290
+if$ -- 5264
+int.to.chr$ -- 0
+int.to.str$ -- 38
+missing$ -- 413
+newline$ -- 119
+num.names$ -- 74
+pop$ -- 728
+preamble$ -- 1
+purify$ -- 206
+quote$ -- 0
+skip$ -- 708
+stack$ -- 0
+substring$ -- 1449
+swap$ -- 1229
+text.length$ -- 53
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 148
+warning$ -- 3
+while$ -- 208
+width$ -- 40
+write$ -- 397
+(There were 3 warnings)

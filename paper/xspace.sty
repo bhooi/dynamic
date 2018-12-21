@@ -1,0 +1,151 @@
+%%% ====================================================================
+%%%  @LaTeX-style-file{
+%%%     filename        = "xspace.sty",
+%%%     version         = "1.01",
+%%%     date            = "26 June 1992",
+%%%     time            = "15:49:24 BST",
+%%%     author          = "David Carlisle",
+%%%     address         = "Computer Science Department
+%%%                        Manchester University
+%%%                        Oxford Road
+%%%                        Manchester
+%%%                        England
+%%%                        M13 9PL",
+%%%     telephone       = "+44 61 275 6139",
+%%%     FAX             = "+44 61 275 6236",
+%%%     checksum        = "21651 151 697 5343",
+%%%     email           = "carlisle@cs.man.ac.uk (Internet)",
+%%%     codetable       = "ISO/ASCII",
+%%%     keywords        = "LaTeX, spaces",
+%%%     supported       = "yes",
+%%%     docstring       = "
+%%%
+%%%     xspace.sty
+%%%
+%%%     \xspace should be used at the end of a macro designed to be used
+%%%     mainly in text. It adds a space unless the macro is followed by
+%%%     certain punctuation characters.
+%%%
+%%%     The checksum field above was produced by
+%%%     Robert Solovay's checksum utility.",
+%%%  }
+%%% ====================================================================
+%
+% Version 1.00 30 August 1991
+% Version 1.01 26 June 1992, Re-issue for the ne doc and docstrip.
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<*x>
+% This file may be used without modification as a style (.sty) file.
+%
+% If you have Mittelbach's doc.sty, this file may be formatted with a
+% command like:
+%                latex xspace.sty
+%
+% If you have the Mittelbach/Duchier/Braams docstrip utility, you may
+% produce a faster loading .sty file.  Rename this file to: xspace.doc
+% Then run this file through *plain* TeX:
+%                tex xspace.doc
+% This should produce the file xspace.sty.
+% If you do not have plain TeX on your system, you can trick LaTeX into
+% doing the work as follows:
+%                latex \def\fmtname{plain} \input xspace.doc
+% Note that you may need to quote the arguments here to stop your
+% operating system treating the \ characters incorrectly.
+%
+%                latex xspace.doc
+% Will produce a typeset version of the documentation, as above.
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\plain{plain}\ifx\fmtname\plain\csname fi\endcsname
+     \def\batchfile{xspace.doc}
+     \input docstrip
+     \preamble
+
+     Do not distribute the stripped version of this file.
+     The checksum in the header refers to the documented version.
+
+     \endpreamble
+     \generateFile{xspace.sty}{t}{\from{xspace.doc}{}}
+     \endinput
+\fi
+%
+\ifcat a\noexpand @\let\next\relax\else\def\next{%
+    \documentstyle[xspace,doc]{article}\MakePercentIgnore}\fi\next
+%
+%\def\eatmodule<#1>{}\eatmodule
+%</x>
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% \textwidth=355pt   ^^A Allow macrocode text with 72 columns.
+% \CodelineIndex     ^^A Code lines numbered.
+% \DisableCrossrefs  ^^A No Cross references.
+% \MakeShortVerb{\|} ^^A |\foo| works like \verb+\foo+
+%
+% \title{xspace.sty}
+% \author{D. P. Carlisle}
+% \date{26 June 1992}
+% \begin{document}
+% \maketitle
+% \begin{abstract}
+% |\xspace| should be used at the end of a macro designed to be used
+% mainly in text. It adds a space unless the macro is followed by
+% certain punctuation characters.
+% \end{abstract}
+% \section{Introduction}
+
+% After |\newcommand{\gb}{Great Britain\xspace}|\\
+% \newcommand{\gb}{Great Britain\xspace}
+% |\gb is a very nice place to live.|\\
+% \gb is a very nice place to live.\\
+% |\gb, a small island off the coast of France.|\\
+% \gb, a small island off the coast of France.
+%
+% |\xspace| saves the user from having to type \verb*+\ + or |{}| after
+% most occurrences of a macro name in text. However if either of these
+% constructions follows |\xspace|, a space is not added by |\xspace|.
+% This means that it is safe to add |\xspace| to the end of an existing
+% macro without making too many changes in your document.
+%
+% Sometimes |\xspace| may make the wrong decision, and add a space when
+% it is not required. In these cases follow the macro with |{}|, as this
+% has the effect of suppressing the space.
+%
+% \typeout{End of the Introduction and Examples.}
+% \typein[\answer]%
+%   {Do you want an annotated listing of the macro definitions (y/n) ?}
+% \def\next{y}\ifx\answer\next\else\expandafter\stop\fi
+%
+% \section{The Macros}
+%
+% \begin{macro}{\xspace}
+% |\xspace| just looks ahead, and then calls |\@xspace|.
+%    \begin{macrocode}
+\def\xspace{\futurelet\next\@xspace}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\@xspace}
+% If the next token is one of a specified list of characters, do
+% nothing, otherwise add a space. If you often use a different
+% punctuation character, add the appropriate line (do not forget the
+% |\fi| at the  end!)
+%    \begin{macrocode}
+\def\@xspace{%
+  \ifx\next\bgroup\else
+  \ifx\next\egroup\else
+  \ifx\next\/\else
+  \ifx\next\ \else
+  \ifx\next~\else
+  \ifx\next.\else
+  \ifx\next,\else
+  \ifx\next:\else
+  \ifx\next;\else
+  \ifx\next?\else
+  \ifx\next'\else
+  \ifx\next)\else
+  \ifx\next-\else
+   \space
+   \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi}
+%    \end{macrocode}
+% \end{macro}
+% \end{document}
