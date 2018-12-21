@@ -191,7 +191,7 @@ end
 % load(savefile);
 
 
-%%
+%% Plot metrics against number of sensors
 for metric_idx = 1:length(mean_metrics)
     for use_legend = 0:1
         figure('Position', [0 0 500 500]);
@@ -214,7 +214,7 @@ for metric_idx = 1:length(mean_metrics)
         printpdf(gcf, sprintf('../plots/eval_%s_%s_%d.pdf', case_name, metric_names{metric_idx}, use_legend));
     end
 end
-%%
+%% Plot legends for the above plots
 
 figure('Position', [0 0 500 500]);
 for method_idx=1:num_methods
