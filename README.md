@@ -14,7 +14,7 @@ New ML methods are more widely applicable, but generally do not consider the imp
 
 Hence, we propose DYNWATCH, a domain knowledge based and topology-aware algorithm for anomaly detection using sensors placed on a dynamic grid. This figure briefly shows how it works:
 
-![Test Image 1](toyexample.png)
+![This is an image](slides/toyexample_dynwatch.png)
 
 Let T denote the width of time window for analysis, then for ∀sensor s, the anomalousness of its observation xT+1 is evaluated based on its previous data x1,x2,...,xT. The anomaly detection method works by assigning weights w1,w2,...,wT (wt ≥0,∀t,∑wt = 1) to all the previous observations and an alarm is created if xT+1 deviates ∑wtxt by a certain
 threshold
