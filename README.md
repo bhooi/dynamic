@@ -2,7 +2,7 @@
 
 A paper of this work has been accepted by IEEE transactions on power systems in 2021.
 
-Li, Shimiao, Amritanshu Pandey, Bryan Hooi, Christos Faloutsos, and Larry Pileggi. "Dynamic Graph-Based Anomaly Detection in the Electrical Grid." arXiv preprint arXiv:2012.15006 (2020).
+Li, Shimiao, Amritanshu Pandey, Bryan Hooi, Christos Faloutsos, and Larry Pileggi. ["Dynamic Graph-Based Anomaly Detection in the Electrical Grid."](https://arxiv.org/pdf/2012.15006.pdf) arXiv preprint arXiv:2012.15006 (2020).
 
 Given sensor readings over time from a power grid, how can we accurately detect when an anomaly occurs? 
 
