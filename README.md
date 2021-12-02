@@ -12,7 +12,8 @@ Existing bad-data detectors in the industry lack the sophistication to robustly 
 
 Hence, we propose DYNWATCH, a domain knowledge based and topology-aware algorithm for anomaly detection using sensors placed on a dynamic grid. This figure briefly shows how it works:
 
-![method](plots/toyexample_dynwatch.png)
+<img src="plots/toyexample_dynwatch.png" width="500">
+
 For anomaly detection at time T+1 on sensor s, we seek to estimate a distribution for its measurements xT+1. Weights w1,w2,...,wT are assigned to its previous data x1,x2,...,xT based on graph distances, such that measurements from similar graphs are given higher level of confidence. The weighted sum is used as the distribution center and an alarm is created if the observation xT+1 deviates from the distribution center by a certain threshold.
 
 Our approach is accurate, outperforming existing approaches by 20% or more (F-measure) in experiments; and fast, averaging less than 1.7ms per time tick per sensor on a 60K+ branch case using a laptop computer, and scaling linearly with the size of the graph.
