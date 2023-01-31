@@ -74,7 +74,8 @@ end
 [Bbus, Bf, Pbusinj, Pfinj] = makeBdc(baseMVA, bus, branch);
 H = zeros(nbr, nb);
 H(:, noslack) = full(Bf(:, noref) / Bbus(noslack, noref));
-        %%    = full(Bf(:, noref) * inv(Bbus(noslack, noref)));
+
+%%    = full(Bf(:, noref) * inv(Bbus(noslack, noref)));
 
 %% distribute slack, if requested
 if length(slack) ~= 1

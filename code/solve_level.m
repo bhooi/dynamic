@@ -5,7 +5,7 @@ function nu = solve_level(dists)
 sdist = sort(dists);
 for i=1:length(dists)
     psum = sum(sdist(1:i));
-    nu = (1 - psum) / i;
+    nu = (1 + psum) / i;
     if nu < sdist(i+1)
         disp(i)
         disp(nu)

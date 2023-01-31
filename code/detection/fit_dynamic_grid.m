@@ -8,20 +8,17 @@
 % scores is the vector of anomalousness scores at each time
 
 function scores = fit_dynamic_grid(X, cur_sensors, graph_dist, incidence_mat)
-
 num_ticks = size(X, 2);
 n = size(incidence_mat, 2);
-
-Xd = X(:, 2:end,:) - X(:, 1:end-1, :); %adjacent differences
-Xp = permute(Xd, [2 1 3]);
-Xp = bsxfun(@minus, Xp, median(Xp, 1));
-Xz = bsxfun(@rdivide, Xp, iqr(Xp, 1)+1e-6); % normalized by median and iqr
 
 Xsensors = nan(num_ticks-1, 6*length(cur_sensors));
 for sensor_idx = 1:length(cur_sensors)
     sensor_node = cur_sensors(sensor_idx);
     sensor_edges = incidence_mat(:, sensor_node);
-    Xi = Xz(:,:,sensor_edges == 1);
+    Xd = X(:, 2:end,sensor_edges == 1) - X(:, 1:end-1, sensor_edges == 1); %adjacent differences
+    Xp = permute(Xd, [2 1 3]);
+    Xp = bsxfun(@minus, Xp, median(Xp, 1));
+    Xi = bsxfun(@rdivide, Xp, iqr(Xp, 1)+1e-6); % normalized by median and iqr
     
     Xedge = max(abs(Xi), [], 3); % single edge anomaly
     Xave = mean(Xi, 3); % group anomaly

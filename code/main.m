@@ -1,24 +1,25 @@
-close all; clear all; clc;
-cd ~/Desktop/bryan-papers/power/dynamic/code
-addpath ~/Desktop/bryan-papers/gridanom/code/matpower6.0
+close all; clear; clc;
+addpath matpower6.0
 addpath util
 addpath detection
 addpath detection/var
 addpath wprctile/
 
 rng(0);
-
-method_names = {'Proposed', 'GridWatch', 'Isolation', 'VAR', 'LOF', 'Parzen'};
-method_switches = [1 1 0 1 1 1]; % convenience switches to turn methods on and off
+method_names = {'DynWatch-Local';
+                'DyanWatch';
+                'GridWatch';
+                'Isolation'; 'VAR'; 'LOF'; 'Parzen'};
+method_switches = [1 1 1 1 1 1 1]; % convenience switches to turn methods on and off
 method_names = method_names(method_switches == 1);
 num_methods = length(method_names); 
 
 metric_names = {'AUC', 'FMeasure'};
 metric_displaynames = {'AUC', 'F Measure'};
 
-case_name = 'case2383wp';
+case_name = 'case57'; %'case_ACTIVSg25k';%
 use_cached_evaldata = true;
-nclust_choices = 5:5:20;
+nclust_choices = 5:5:40;
 num_choices = length(nclust_choices);
 
 M_in = loadcase(case_name);
@@ -37,7 +38,7 @@ num_anom = 50;
 
 num_trials = 1;
 
-save_results = true;
+save_results = false;
 plot_anom = false;
 
 M_in = renumber_matpower_nodes(M_in);
@@ -95,26 +96,18 @@ true_labels = zeros(1, num_ticks); % zero-one vector with 1s indicating true ano
 true_labels(anom_time) = 1;
 
 %%
-X = compute_features(M_in, Ir, Ii, Vr, Vi); 
-
+X = compute_features(M_in, Ir, Ii, Vr, Vi);  %X is the features that gridwatch would use
 
 %% EVALUATION
 incidence_mat = abs(get_incidence_matrix(M_in));
-
 all_scores = cell(num_trials, num_choices, num_methods);
 metric_auc = nan(num_trials, num_methods, num_choices);
 metric_fmeas = nan(num_trials, num_methods, num_choices);
 
-resist_dist_weight = 800;
-current_dist_weight = .002;
-
-gdist_current = compute_current_dist(M_in, graph_del_edges); % graph distance matrix based on current
-gdist_current = current_dist_weight * gdist_current / mean(gdist_current(:));
-
-gdist_resist = compute_resist_dist(M_in, graph_del_edges); % graph distance matrix based on effective resistance
-gdist_resist = resist_dist_weight * gdist_resist / mean(gdist_resist(:));
-
-
+%calculate DynWatch graph distance
+dist_weight = .05;
+gdist_LODF = compute_LODF_dist(M_in, graph_del_edges); 
+gdist_LODF = dist_weight*gdist_LODF/mean(gdist_LODF(:));
 %%
 for trial_idx=1:num_trials
     fprintf('TRIAL: %d\n', trial_idx);
@@ -133,9 +126,16 @@ for trial_idx=1:num_trials
 
         csvwrite('../temp/Xsensors.csv', Xsensors); % write voltages to file, needed by forest and ets methods
         system('./detection/dist/anomaly_detector/anomaly_detector');
-
+        
+        %calculate Dynwatch-local graph distance
+        if method_switches(1)   
+            gdist_ls_LODF=computer_ls_LODF(M_in, graph_del_edges, cur_sensors);
+            gdist_ls_LODF=0.05*gdist_ls_LODF/mean(gdist_ls_LODF(:));
+        end
+        
         method_funcs = {
-            @() fit_dynamic_grid(X, cur_sensors, gdist_current, incidence_mat),...
+            @() fit_ls_dynamic_grid(X, cur_sensors, gdist_ls_LODF, incidence_mat),...           
+            @() fit_dynamic_grid(X, cur_sensors, gdist_LODF, incidence_mat),...
             @() fit_gridwatch(X, cur_sensors, incidence_mat),...
             @() [csvread('../temp/forest_out.csv'); nan]',...
             @() fit_var(Xsensors),...
@@ -154,49 +154,31 @@ for trial_idx=1:num_trials
         end
     end
 end
-%%
-% if plot_anom
-%     for choice_idx = 1:num_choices
-%         for method_idx = 1:num_methods
-%             figure('Position', [0 0 1200 400]);
-%             semilogy(all_scores{choice_idx, method_idx}, '-x'); hold on;
-%             ylim([0.1 10^4]); yl = ylim;
-%             xlabel('Time'); ylabel('Anom score');
-%             for i=anom_time
-%                 plot([i i], yl, 'k-');
-%             end
-%             title(sprintf('%s (%d)', method_names{method_idx}, nclust_choices(choice_idx)));
-%             set(findall(gcf,'Type','Axes'),'FontSize',20);
-%             set(findall(gcf,'Type','Text'),'FontSize',32);
-%             set(findall(gcf,'Type','Legend'),'FontSize',28);
-%             printpdf(gcf, sprintf('../plots/anom/anom_%s_%d_%s.pdf', case_name, choice_idx, method_names{method_idx}));
-%         end
-%     end
-% end
+
 %%
 mean_auc = reshape(mean(metric_auc, 1), num_methods, num_choices);
 mean_fmeas = reshape(mean(metric_fmeas, 1), num_methods, num_choices);
 array2table(mean_auc, 'RowNames', method_names)
 array2table(mean_fmeas, 'RowNames', method_names)
+
 fprintf('AUC %.4f\n', mean(mean_auc, 2)); fprintf('F %.4f\n', mean(mean_fmeas, 2));
 array2table([mean(mean_auc, 2) mean(mean_fmeas, 2) ], 'RowNames', method_names, 'VariableNames', metric_names)
 mean_metrics = {mean_auc, mean_fmeas};
 
 %%
-
 savefile = sprintf('../output/main_eval_%s.mat', case_name);
 if save_results
     save(savefile, 'mean_metrics');
 end
 % load(savefile);
 
-
 %% Plot metrics against number of sensors
+figure('Position', [0 0 500 500]);
 for metric_idx = 1:length(mean_metrics)
     for use_legend = 0:1
-        figure('Position', [0 0 500 500]);
+        subplot(2,2,metric_idx+2*use_legend);
         for method_idx=1:num_methods
-            plot(nclust_choices, mean_metrics{metric_idx}(method_idx,:), '-', 'Marker', markers{method_idx}, 'MarkerSize', 12, 'MarkerFaceColor', cols(method_idx,:), 'Color', cols(method_idx,:), 'LineWidth', 2); hold on;
+            plot(nclust_choices, mean_metrics{metric_idx}(method_idx,:), '-', 'Marker', markers{method_idx}, 'MarkerSize', 6, 'MarkerFaceColor', cols(method_idx,:), 'Color', cols(method_idx,:), 'LineWidth', 1.5); hold on;
         end
         xlabel('Number of sensors');
         ylabel(metric_displaynames{metric_idx});
@@ -208,21 +190,20 @@ for metric_idx = 1:length(mean_metrics)
                 legend(method_names, 'Location', 'northwest');
             end
         end
-        set(findall(gcf,'Type','Axes'),'FontSize',28);
-        set(findall(gcf,'Type','Text'),'FontSize',32);
-        set(findall(gcf,'Type','Legend'),'FontSize',24);
+        set(findall(gcf,'Type','Axes'),'FontSize',10);
+        set(findall(gcf,'Type','Text'),'FontSize',10);
+        set(findall(gcf,'Type','Legend'),'FontSize',10);
         printpdf(gcf, sprintf('../plots/eval_%s_%s_%d.pdf', case_name, metric_names{metric_idx}, use_legend));
     end
 end
 %% Plot legends for the above plots
-
 figure('Position', [0 0 500 500]);
 for method_idx=1:num_methods
-    plot(nclust_choices, mean_metrics{metric_idx}(method_idx,:), '-', 'Marker', markers{method_idx}, 'MarkerSize', 12, 'MarkerFaceColor', cols(method_idx,:), 'Color', cols(method_idx,:), 'LineWidth', 2); hold on;
+    plot(nclust_choices, mean_metrics{metric_idx}(method_idx,:), '-', 'Marker', markers{method_idx}, 'MarkerSize',6, 'MarkerFaceColor', cols(method_idx,:), 'Color', cols(method_idx,:), 'LineWidth', 1.5); hold on;
 end
 xlim([-2 -1]); ylim([-2 -1]);
 legend(method_names, 'Location', 'southwest');
-set(findall(gcf,'Type','Axes'),'FontSize',28);
-set(findall(gcf,'Type','Text'),'FontSize',32);
-set(findall(gcf,'Type','Legend'),'FontSize',24);
+set(findall(gcf,'Type','Axes'),'FontSize',10);
+set(findall(gcf,'Type','Text'),'FontSize',10);
+set(findall(gcf,'Type','Legend'),'FontSize',10);
 printpdf(gcf, sprintf('../plots/legend_%s_%s.pdf', case_name, metric_names{metric_idx}));
