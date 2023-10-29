@@ -10,15 +10,15 @@ method_names = {'DynWatch-Local';
                 'DyanWatch';
                 'GridWatch';
                 'Isolation'; 'VAR'; 'LOF'; 'Parzen'};
-method_switches = [1 1 1 1 1 1 1]; % convenience switches to turn methods on and off
+method_switches = [1 1 1, 0 1 1 1]; % convenience switches to turn methods on and off
 method_names = method_names(method_switches == 1);
 num_methods = length(method_names); 
 
 metric_names = {'AUC', 'FMeasure'};
 metric_displaynames = {'AUC', 'F Measure'};
 
-case_name = 'case57'; %'case_ACTIVSg25k';%
-use_cached_evaldata = true;
+case_name = 'case118'; %'case_ACTIVSg25k';%
+use_cached_evaldata = false;
 nclust_choices = 5:5:40;
 num_choices = length(nclust_choices);
 
@@ -105,7 +105,7 @@ metric_auc = nan(num_trials, num_methods, num_choices);
 metric_fmeas = nan(num_trials, num_methods, num_choices);
 
 %calculate DynWatch graph distance
-dist_weight = .02;
+dist_weight = .5;
 gdist_LODF = compute_LODF_dist(M_in, graph_del_edges); 
 gdist_LODF = dist_weight*gdist_LODF/mean(gdist_LODF(:));
 %%
@@ -130,7 +130,7 @@ for trial_idx=1:num_trials
         %calculate Dynwatch-local graph distance
         if method_switches(1)   
             gdist_ls_LODF=computer_ls_LODF(M_in, graph_del_edges, cur_sensors);
-            gdist_ls_LODF=0.05*gdist_ls_LODF/mean(gdist_ls_LODF(:));
+            gdist_ls_LODF=0.5*gdist_ls_LODF/mean(gdist_ls_LODF(:));
         end
         
         method_funcs = {
