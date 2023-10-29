@@ -105,7 +105,7 @@ metric_auc = nan(num_trials, num_methods, num_choices);
 metric_fmeas = nan(num_trials, num_methods, num_choices);
 
 %calculate DynWatch graph distance
-dist_weight = .05;
+dist_weight = .02;
 gdist_LODF = compute_LODF_dist(M_in, graph_del_edges); 
 gdist_LODF = dist_weight*gdist_LODF/mean(gdist_LODF(:));
 %%
